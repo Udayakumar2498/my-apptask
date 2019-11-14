@@ -1,10 +1,12 @@
 export interface Productdetail {
-    name: string;
-    image: string;
+    title: string;
+    imageUrl: string;
     description: string;
     imageAlt: string;
-    Price: number;
+    price: number;
     isAvailable: boolean;
+    createdAt: string;
+    updatedAt: string;
 }
 
 

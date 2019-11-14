@@ -1,21 +1,12 @@
-
-<div class="container-fluid">
-<div class="row">
-<div class="card col-md-4" *ngFor="let item of myProduct">
-  <img [src]="item.image" class="card-img-top" alt="...">
-  <div class="card-body">
-    <a class="btn btn-primary" routerLink = "/productdetails" routerLinkActive = "active" >{{ item.name }}</a>
-    
-    <P>₹{{ item.Price }}</P>
-    <p class="card-text">{{ item.description }}</p>
-               
-    <span class="not available" *ngIf='!item.isAvailable'>
-    <button href="#" class="btn btn-danger" [disabled]='!item.isAvailable' >Out of stock</button>
-  </span>
-  <span class="available" *ngIf='item.isAvailable'>
-      <button href="#" class="btn btn-primary" [disabled]='!item.isAvailable' >Add to Cart</button>
-    </span>
+<div class="container">
+  <div class="row" >
+    <div *ngFor="let item of myProduct">
+      <app-productdetails [product]='item' (isDeleted)=deleted($event) ></app-productdetails>
     </div>
+  </div>
 </div>
-</div>   
-<div>
+
+
+
+
+

@@ -8,14 +8,14 @@ import { AddproductComponent } from './addproduct/addproduct.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProductdetailsComponent } from './productdetails/productdetails.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 const appRoutes: Routes = [
   { path: '', component: ProductComponent },
   { path: 'addproduct', component: AddproductComponent},
-  { path: 'productdetails', component: ProductdetailsComponent}
-
+  { path: 'productdetail/:id', component: ProductdetailsComponent},
+  { path: 'addproduct/:id', component: AddproductComponent}
 ];
-
-
 
 @NgModule({
   declarations: [
@@ -31,8 +31,9 @@ const appRoutes: Routes = [
     BrowserModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot (
-      appRoutes
+      appRoutes,
     )
   ],
   providers: [],

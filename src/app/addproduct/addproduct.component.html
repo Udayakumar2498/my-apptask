@@ -1,21 +1,29 @@
-<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
-  <h4>Name</h4>
-    <input formControlName="name" placeholder="Your name"><br>
 
-    <h4>Image URL</h4>
-    <input formControlName="image" placeholder="image URL">
-
-    <h4>isAvailable</h4>
-    <input formControlName="isAvailable" placeholder="true/false"><br>
-
-
-    <h4>description</h4>
-    <input formControlName="description" placeholder="description">
+  <form [formGroup]="myForm"  >
+    <div class="form-group">
+      <label for="exampleInputEmail1">Product Name</label>
+      <input type="text" class="form-control" id="exampleInputEmail1" formControlName="title" aria-describedby="emailHelp" placeholder="Product-Name">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Price</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="price" placeholder="'Price'">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Image</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="imageUrl" placeholder="'Image'">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">isAvailable</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="isAvailable" placeholder="'isAvailable'">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Description</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="description" placeholder="'Description'">
+    </div>
+ 
 
    
-
-    <h4>Price</h4>
-    <input formControlName="Price" placeholder="Price"><br><br>
-  
-    <button type="submit">Send</button>
+    <button type="submit" (click)="onSubmit(myForm)" class="btn btn-success">Send</button>
+    <button type="submit" class="btn btn-danger" (click)="del(id)" >Delete product</button>
+   
   </form>

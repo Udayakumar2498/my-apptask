@@ -7,12 +7,23 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
+  myProduct: any;
 
-    myProduct;
     constructor(private service: ProductService) {
-      this.myProduct = this.service.getnewproduct();
+      this.service.getnewproduct().subscribe(response =>
+         {console.log(response);
+          this.myProduct = response;
+        }
+         );
     }
 
+    deleted(event) {
+      this.service.getnewproduct().subscribe(Response => {
+        this.myProduct = Response;
+        console.log(this.myProduct);
+      });
+    }
   ngOnInit() {
   }
  }
+ 
